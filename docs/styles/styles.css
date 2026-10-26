@@ -1,62 +1,23 @@
-body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 0;
-    background: url('../images/site-background.png') no-repeat center center fixed;
-    background-size: cover;
-    color: #000;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 3em auto;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 2em;
-    border-radius: 8px;
-  }
-
-  .site-title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5em;
-    padding: 0.5em 0;
-    margin: 1.5em 0 1em;
-    color: #000;
-  }
-  
-  .site-subtitle {
-    text-align: center;
-    font-size: 1.1em;
-    font-style: italic;
-    color: #666;
-    margin-bottom: 1em;
-    margin-top: -3.2em;
-  }
-  
-  p {
-    color: #000;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    text-align: left;
-  }
-  
-  ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  li {
-    color: #000;
-    font-size: 1.05rem;
-    margin-bottom: 0.5rem;
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 3em;
-    font-size: 0.8em;
-    color: #555;
-    font-weight: bold;
-  }
-  
+:root{--ink:#29332e;--rust:#a4472b;--panel:rgba(255,253,247,.94);--panel-width:50vw}
+*{box-sizing:border-box}
+html{min-height:100%;background:#ece4d1}
+body{margin:0;min-height:100vh;min-height:100svh;color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:clamp(16px,1.12vw,23px);line-height:1.55}
+.backdrop{position:fixed;inset:0;z-index:0;background:url('../images/golden-gate-banner.jpg') 58% center/cover no-repeat}
+.backdrop::after{content:'';position:absolute;inset:0;background:rgba(249,243,226,.15)}
+.page{position:relative;z-index:1;min-height:100vh;min-height:100svh;padding:clamp(28px,4vh,58px) 0 22px}
+.site-header{width:min(88vw,1600px);margin:0 auto clamp(24px,4vh,50px);display:flex;justify-content:center;align-items:center;gap:22px;text-align:center}
+.logo{flex:none;width:clamp(68px,5.2vw,100px);height:auto;border-radius:50%;box-shadow:0 2px 15px rgba(45,37,24,.08)}
+.heading{padding:10px 18px;background:rgba(255,253,247,.9);border-radius:8px}
+h1{font-size:clamp(25px,2.3vw,46px);line-height:1.17;font-weight:700;letter-spacing:-.5px;margin:0 0 7px}
+.subtitle{font-style:italic;font-size:clamp(15px,1.25vw,24px);line-height:1.4;margin:0;color:#4c554b}
+.container{width:var(--panel-width);margin:0 auto;background:var(--panel);border-radius:12px;padding:clamp(26px,2.5vw,52px);box-shadow:0 8px 35px rgba(35,44,34,.1)}
+p{margin:0 0 1em}h2{font-size:1.08em;line-height:1.4;margin:1.25em 0 .65em;font-weight:700}
+ul{padding-left:1.25em;margin:.5em 0 1.1em}li{padding-left:.1em;margin:.3em 0}li::marker{color:var(--rust)}
+.closing{font-size:1.12em;font-style:italic;color:var(--rust);margin:1.1em 0}
+.contact{border-top:1px solid rgba(77,70,50,.2);padding-top:1em;margin-top:1.2em}.contact p{margin:0 0 .4em}.contact p:last-child{margin-bottom:0}
+a{color:#914027;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}a:hover{color:#592818}a:focus-visible{outline:2px solid var(--rust);outline-offset:5px}
+footer{width:fit-content;max-width:90vw;margin:24px auto 0;padding:7px 14px;background:rgba(255,253,247,.9);border-radius:5px;font-size:clamp(11px,.78vw,15px);line-height:1.5;text-align:center;color:#3e483e}
+@media(max-width:1100px){:root{--panel-width:72vw}.site-header{width:90vw;gap:14px}.container{padding:30px}}
+@media(max-width:700px){:root{--panel-width:calc(100% - 32px)}body{font-size:17px}.page{padding-top:22px}.site-header{flex-direction:column;gap:12px;margin-bottom:22px;width:calc(100% - 32px)}.logo{width:76px}.heading{padding:14px 16px;width:100%}h1{font-size:28px;letter-spacing:-.4px}.subtitle{font-size:17px}.container{padding:25px 23px;border-radius:10px}.backdrop{background-position:60% center}footer{max-width:calc(100% - 32px);margin-top:18px;font-size:11px}}
+@media(max-width:380px){h1{font-size:25px}.container{padding:23px 20px}body{font-size:16px}}
+@media(prefers-reduced-transparency:reduce){.container,.heading,footer{background:#fffdf7}}
